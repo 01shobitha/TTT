@@ -2,88 +2,105 @@ package game;
 //import javax.swing.*;
 
 public class TTT {
-	int user=1;
-	int arr[][]=new int[3][3];
+	
+	public static final int PLAYER_1 = 1; 
+	public static final int PLAYER_2 = 2;
+	public static final int EMPTY = 0;
+	private char user;
+	private int board[][];
+	
+	public TTT() {
+			user = PLAYER_1;
+			board = new int[3][3];
+		 }
+
 	
 
 
- public int Check()
- {
-	 int whoWonR=rowDone();
-	 int whoWonC=ColumnDone();
-	 int whoWonD=DiagonalDone();
-	 if(whoWonR==1||whoWonC==1||whoWonD==1)
-	 {
-		 System.out.println("player 1 wins");
-		 return 1;
-	 }
+	public int Check() {
+		
+		int whoWonR = rowDone();
+		int whoWonC = ColumnDone();
+		int whoWonD = DiagonalDone();
+		
+		if(whoWonR == 1 || whoWonC == 1 || whoWonD == 1) {
+			
+			System.out.println("player 1 wins");
+			return PLAYER_1;
+		}
 
-	 if(whoWonC==2||whoWonD==2||whoWonR==2)
-	 {
-		 System.out.println("player 2 wins");
-		 return 2;
-	 }
+		if(whoWonC == 2 || whoWonD == 2 || whoWonR == 2) {
+			
+			System.out.println("player 2 wins");
+			return PLAYER_2;
+		}
 		 
-	 else 
-		 {
-		 System.out.println("its a draw");
-		 	return -1;
+		else {
+			
+			System.out.println("its a draw");
+		 	return EMPTY;
+		}
+	}
+
+	public void setVal(int i,int j) {
+	 
+		if(user == PLAYER_1) {
+			
+			board[i][j] = PLAYER_1;
+			user = PLAYER_2;
+			return;
+		}
+		if(user == PLAYER_2){
+			
+			board[i][j] = PLAYER_2;
+			user = PLAYER_1;
+			return;
+		}
+	}
+ 
+	public int rowDone(){
+		
+		for(int i = 0; i < 3; ++i){
+			
+			if(board[i][0] == board[i][1] && board[i][1] == board[i][2] && board[i][0] == PLAYER_1)
+				return PLAYER_1;
+			if(board[i][0] == board[i][1] && board[i][1] == board[i][2] && board[i][0] == PLAYER_2)
+				return PLAYER_2;
+		}
+		return EMPTY;
+	}
+ 
+	public int ColumnDone() {
+		
+		for(int i = 0; i < 3; ++i) {
+			
+			if(board[0][i] == board[1][i] && board[1][i] == board[2][i] && board[0][i] == PLAYER_1)
+				return PLAYER_1;
+			
+			if(board[0][i] == board[1][i] && board[1][i] == board[2][i] && board[0][i] == PLAYER_2)
+				return PLAYER_2;
 		 }
- }
-
- public void setVal(int i,int j)
- {
-	 if(user==1)
-	 {
-		 arr[i][j]=1;
-		 user=2;
-		 return;
-	 }
-	 if(user==2)
-	 {
-		 arr[i][j]=2;
-		 user=1;
-		 return;
-	 }
- }
+		return EMPTY;
+	}
  
- public int rowDone()
- {
-	 for(int i=0;i<3;++i)
-	 {
-		 if(arr[i][0]==arr[i][1] && arr[i][1]==arr[i][2] && arr[i][0]==1)
-		 return 1;
-		 if(arr[i][0]==arr[i][1] && arr[i][1]==arr[i][2] && arr[i][0]==2)
-		 return 2;
-	 }
-	 return -1;
- }
- 
- public int ColumnDone()
- {
-	 for(int i=0;i<3;++i)
-	 {
-		 if(arr[0][i]==arr[1][i] && arr[1][i]==arr[2][i] && arr[0][i]==1)
-		 return 1;
-		 if(arr[0][i]==arr[1][i] && arr[1][i]==arr[2][i] && arr[0][i]==2)
-		 return 2;
+	public int DiagonalDone() {
+		
+		 if(board[0][0] == board[1][1] && board[1][1] == board[2][2] && board[0][0] == PLAYER_1)
+			 return PLAYER_1;
+		 if(board[0][0] == board[1][1] && board[1][1] == board[2][2] && board[0][0] == PLAYER_2)
+			 return PLAYER_2;
 		 
-	 }
-	 return -1;
- }
- 
- public int DiagonalDone()
- {
-		 if(arr[0][0]==arr[1][1] && arr[1][1]==arr[2][2] && arr[0][0]==1)
-			 return 1;
-		 if(arr[0][0]==arr[1][1] && arr[1][1]==arr[2][2] && arr[0][0]==2)
-			 return 2;
+		 if(board[0][2] == board[1][1] && board[1][1] == board[2][0] && board[0][2] == PLAYER_1)
+			 return PLAYER_1;
+		 if(board[0][2] == board[1][1] && board[1][1] == board[2][0] && board[0][2] == PLAYER_2)
+			 return PLAYER_2;
 		 
-		 if(arr[0][2]==arr[1][1]&&arr[1][1]==arr[2][0] && arr[0][2]!=1)
-			 return 1;
-		 if(arr[0][2]==arr[1][1]&&arr[1][1]==arr[2][0] && arr[0][2]!=2)
-			 return 2;
-		return -1;	 
+		return EMPTY;	 
+	}
+ 
+ public void StartGame()
+ {
+	 new TTT();
  }
  
 }
