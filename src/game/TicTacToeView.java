@@ -45,7 +45,7 @@ public class TicTacToeView extends JFrame {
 					one.setBackground(Color.YELLOW);
 				VALUE[0]=0;
 				VALUE[1]=0;
-				t.setVal(VALUE[1],VALUE[2]);
+				t.setVal(VALUE[0],VALUE[1]);
 				t.Check();			
 				
 				}
@@ -63,7 +63,7 @@ public class TicTacToeView extends JFrame {
 					two.setBackground(Color.YELLOW);
 				VALUE[0]=0;
 				VALUE[1]=1;
-				t.setVal(VALUE[1],VALUE[2]);
+				t.setVal(VALUE[0],VALUE[1]);
 				
 			}
 		});
@@ -80,7 +80,7 @@ public class TicTacToeView extends JFrame {
 					three.setBackground(Color.YELLOW);
 				VALUE[0]=0;
 				VALUE[1]=2;
-				t.setVal(VALUE[1],VALUE[2]);
+				t.setVal(VALUE[0],VALUE[1]);
 				
 			}
 		});
@@ -97,7 +97,7 @@ public class TicTacToeView extends JFrame {
 					four.setBackground(Color.YELLOW);
 				VALUE[0]=1;
 				VALUE[1]=0;
-				t.setVal(VALUE[1],VALUE[2]);
+				t.setVal(VALUE[0],VALUE[1]);
 				
 			}
 		});
@@ -115,7 +115,7 @@ public class TicTacToeView extends JFrame {
 					five.setBackground(Color.YELLOW);
 				VALUE[0]=1;
 				VALUE[1]=1;
-				t.setVal(VALUE[1],VALUE[2]);
+				t.setVal(VALUE[0],VALUE[1]);
 				
 			}
 		});
@@ -131,7 +131,7 @@ public class TicTacToeView extends JFrame {
 					six.setBackground(Color.YELLOW);
 				VALUE[0]=1;
 				VALUE[1]=2;
-				t.setVal(VALUE[1],VALUE[2]);
+				t.setVal(VALUE[0],VALUE[1]);
 				
 			}
 		});
@@ -148,7 +148,7 @@ public class TicTacToeView extends JFrame {
 					seven.setBackground(Color.YELLOW);
 				VALUE[0]=2;
 				VALUE[1]=0;
-				t.setVal(VALUE[1],VALUE[2]);
+				t.setVal(VALUE[0],VALUE[1]);
 				
 			}
 		});
@@ -165,7 +165,7 @@ public class TicTacToeView extends JFrame {
 					eight.setBackground(Color.YELLOW);
 				VALUE[0]=2;
 				VALUE[1]=1;
-				t.setVal(VALUE[1],VALUE[2]);
+				t.setVal(VALUE[0],VALUE[1]);
 				
 			}
 		});
@@ -182,7 +182,7 @@ public class TicTacToeView extends JFrame {
 					nine.setBackground(Color.YELLOW);
 				VALUE[0]=2;
 				VALUE[1]=2;
-				t.setVal(VALUE[1],VALUE[2]);
+				t.setVal(VALUE[0],VALUE[1]);
 				
 			}
 		});

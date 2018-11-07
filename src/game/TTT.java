@@ -6,6 +6,7 @@ public class TTT {
 	public static final int PLAYER_1 = 1; 
 	public static final int PLAYER_2 = 2;
 	public static final int EMPTY = 0;
+	public static int MOVES =0;
 	private char user;
 	private int board[][];
 	
@@ -35,10 +36,14 @@ public class TTT {
 			return PLAYER_2;
 		}
 		 
-		else {
-			
+		else { 
+			if(MOVES>=5) {
 			System.out.println("its a draw");
 		 	return EMPTY;
+		}
+			return EMPTY;
+			
+			
 		}
 	}
 
@@ -56,6 +61,7 @@ public class TTT {
 			user = PLAYER_1;
 			return;
 		}
+		MOVES++;
 	}
  
 	public int rowDone(){
@@ -98,15 +104,24 @@ public class TTT {
 		return EMPTY;	 
 	}
  
- public void StartGame()
- {
-	 new TTT();
- }
- public int WhichPlayer()
- {
-	 if(user==PLAYER_1)
-		 return PLAYER_1;
-	 else return PLAYER_2;
- }
+	public void StartGame() {
+		new TTT();
+	}
+	
+	public int WhichPlayer() {
+		
+		if(user==PLAYER_1)
+			return PLAYER_1;
+		else 
+			return PLAYER_2;
+	}
+	
+	public boolean EndGame() {
+		if(MOVES==9) 
+			return true;
+		else 
+			return false;
+		
+	}
  
 }
