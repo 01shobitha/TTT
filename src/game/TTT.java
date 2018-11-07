@@ -116,12 +116,5 @@ public class TTT {
 			return PLAYER_2;
 	}
 	
-	public boolean EndGame() {
-		if(MOVES==9) 
-			return true;
-		else 
-			return false;
-		
-	}
  
 }
