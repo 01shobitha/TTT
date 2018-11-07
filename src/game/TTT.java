@@ -102,5 +102,11 @@ public class TTT {
  {
 	 new TTT();
  }
+ public int WhichPlayer()
+ {
+	 if(user==PLAYER_1)
+		 return PLAYER_1;
+	 else return PLAYER_2;
+ }
  
 }
