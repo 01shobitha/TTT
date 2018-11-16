@@ -1,5 +1,10 @@
 package game;
-//import javax.swing.*;
+
+import javax.swing.JOptionPane;
+
+import javax.swing.*;
+
+
 
 public class TTT {
 	
@@ -15,34 +20,28 @@ public class TTT {
 			board = new int[3][3];
 		 }
 
-	
-
-
 	public int Check() {
 		
+		JFrame f;  
 		int whoWonR = rowDone();
 		int whoWonC = ColumnDone();
 		int whoWonD = DiagonalDone();
 		
 		if(whoWonR == 1 || whoWonC == 1 || whoWonD == 1) {
-			
+			Winner w=new Winner();
 			System.out.println("player 1 wins");
 			return PLAYER_1;
 		}
 
 		if(whoWonC == 2 || whoWonD == 2 || whoWonR == 2) {
-			
+			Winner2 w2=new Winner2();
 			System.out.println("player 2 wins");
 			return PLAYER_2;
 		}
-		 
+			 
 		else { 
-			if(MOVES>=5) {
 			System.out.println("its a draw");
 		 	return EMPTY;
-		}
-			return EMPTY;
-			
 			
 		}
 	}
@@ -66,12 +65,13 @@ public class TTT {
  
 	public int rowDone(){
 		
-		for(int i = 0; i < 3; ++i){
+			for(int i = 0; i < 3; ++i) {
+				
+				if(board[i][0] == board[i][1] && board[i][1] == board[i][2] && board[i][0] == PLAYER_1)
+					return PLAYER_1;
+				if(board[i][0] == board[i][1] && board[i][1] == board[i][2] && board[i][0] == PLAYER_2)
+					return PLAYER_2;
 			
-			if(board[i][0] == board[i][1] && board[i][1] == board[i][2] && board[i][0] == PLAYER_1)
-				return PLAYER_1;
-			if(board[i][0] == board[i][1] && board[i][1] == board[i][2] && board[i][0] == PLAYER_2)
-				return PLAYER_2;
 		}
 		return EMPTY;
 	}
@@ -80,27 +80,30 @@ public class TTT {
 		
 		for(int i = 0; i < 3; ++i) {
 			
-			if(board[0][i] == board[1][i] && board[1][i] == board[2][i] && board[0][i] == PLAYER_1)
-				return PLAYER_1;
 			
-			if(board[0][i] == board[1][i] && board[1][i] == board[2][i] && board[0][i] == PLAYER_2)
-				return PLAYER_2;
+				if(board[0][i] == board[1][i] && board[1][i] == board[2][i] && board[0][i] == PLAYER_1)
+					return PLAYER_1;
+				
+				if(board[0][i] == board[1][i] && board[1][i] == board[2][i] && board[0][i] == PLAYER_2)
+					return PLAYER_2;
+			
+			
 		 }
 		return EMPTY;
 	}
  
 	public int DiagonalDone() {
 		
-		 if(board[0][0] == board[1][1] && board[1][1] == board[2][2] && board[0][0] == PLAYER_1)
-			 return PLAYER_1;
-		 if(board[0][0] == board[1][1] && board[1][1] == board[2][2] && board[0][0] == PLAYER_2)
-			 return PLAYER_2;
-		 
-		 if(board[0][2] == board[1][1] && board[1][1] == board[2][0] && board[0][2] == PLAYER_1)
-			 return PLAYER_1;
-		 if(board[0][2] == board[1][1] && board[1][1] == board[2][0] && board[0][2] == PLAYER_2)
-			 return PLAYER_2;
-		 
+			 if(board[0][0] == board[1][1] && board[1][1] == board[2][2] && board[0][0] == PLAYER_1)
+				 return PLAYER_1;
+			 if(board[0][0] == board[1][1] && board[1][1] == board[2][2] && board[0][0] == PLAYER_2)
+				 return PLAYER_2;
+			 
+			 if(board[0][2] == board[1][1] && board[1][1] == board[2][0] && board[0][2] == PLAYER_1)
+				 return PLAYER_1;
+			 if(board[0][2] == board[1][1] && board[1][1] == board[2][0] && board[0][2] == PLAYER_2)
+				 return PLAYER_2;
+		
 		return EMPTY;	 
 	}
  

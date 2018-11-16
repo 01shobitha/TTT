@@ -64,6 +64,7 @@ public class TicTacToeView extends JFrame {
 				VALUE[0]=0;
 				VALUE[1]=1;
 				t.setVal(VALUE[0],VALUE[1]);
+				t.Check();
 				
 			}
 		});
@@ -81,6 +82,7 @@ public class TicTacToeView extends JFrame {
 				VALUE[0]=0;
 				VALUE[1]=2;
 				t.setVal(VALUE[0],VALUE[1]);
+				t.Check();
 				
 			}
 		});
@@ -98,7 +100,7 @@ public class TicTacToeView extends JFrame {
 				VALUE[0]=1;
 				VALUE[1]=0;
 				t.setVal(VALUE[0],VALUE[1]);
-				
+				t.Check();		
 			}
 		});
 		contentPane.add(four);
@@ -116,6 +118,7 @@ public class TicTacToeView extends JFrame {
 				VALUE[0]=1;
 				VALUE[1]=1;
 				t.setVal(VALUE[0],VALUE[1]);
+				t.Check();
 				
 			}
 		});
@@ -132,6 +135,7 @@ public class TicTacToeView extends JFrame {
 				VALUE[0]=1;
 				VALUE[1]=2;
 				t.setVal(VALUE[0],VALUE[1]);
+				t.Check();
 				
 			}
 		});
@@ -149,7 +153,7 @@ public class TicTacToeView extends JFrame {
 				VALUE[0]=2;
 				VALUE[1]=0;
 				t.setVal(VALUE[0],VALUE[1]);
-				
+				t.Check();		
 			}
 		});
 		contentPane.add(seven);
@@ -166,7 +170,7 @@ public class TicTacToeView extends JFrame {
 				VALUE[0]=2;
 				VALUE[1]=1;
 				t.setVal(VALUE[0],VALUE[1]);
-				
+				t.Check();
 			}
 		});
 		contentPane.add(eight);
@@ -183,7 +187,7 @@ public class TicTacToeView extends JFrame {
 				VALUE[0]=2;
 				VALUE[1]=2;
 				t.setVal(VALUE[0],VALUE[1]);
-				
+				t.Check();
 			}
 		});
 		contentPane.add(nine);
